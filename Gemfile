@@ -12,6 +12,9 @@ gem 'jbuilder', '~> 2.7'
 
 gem 'devise', '~> 4.7', '>= 4.7.1'
 
+gem 'materialize-sass', '~> 1.0.0'
+gem 'material_icons'
+
 gem 'bootsnap', '>= 1.4.2', require: false
 
 group :development, :test do
