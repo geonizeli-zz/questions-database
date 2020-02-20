@@ -15,7 +15,11 @@ gem 'devise', '~> 4.7', '>= 4.7.1'
 gem 'bootsnap', '>= 1.4.2', require: false
 
 group :development, :test do
+  gem 'awesome_print', '~> 1.8'
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'factory_bot', '~> 5.1', '>= 5.1.1'
+  gem 'rspec-rails', '~> 3.9'
+  gem 'rubocop', '~> 0.80.0'
 end
 
 group :development do
