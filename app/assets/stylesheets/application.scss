@@ -1,1 +1,8 @@
 @import "materialize";
+@import "./actiontext.scss";
+
+.container {
+  max-width: 800px;
+  padding-top: 5%;
+  padding-bottom: 5%;
+}
