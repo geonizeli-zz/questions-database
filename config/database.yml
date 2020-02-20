@@ -3,7 +3,7 @@ development:
   encoding: unicode
   database: unifeso_development
   pool: 5
-  username: joao
+  username: rails
   password:
 
 test:
@@ -11,7 +11,7 @@ test:
   encoding: unicode
   database: unifeso_test
   pool: 5
-  username: joao
+  username: rails
   password:
 
 production:
@@ -19,5 +19,5 @@ production:
   encoding: unicode
   database: unifeso_production
   pool: 5
-  username: joao
+  username: rails
   password:
