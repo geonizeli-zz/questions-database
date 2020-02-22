@@ -9,7 +9,7 @@ class QuestionsController < ApplicationController
   # GET /questions
   # GET /questions.json
   def index
-    @questions = Question.all
+    @questions = current_user.questions
   end
 
   # GET /questions/1
@@ -30,6 +30,7 @@ class QuestionsController < ApplicationController
   # POST /questions.json
   def create
     @question = Question.new(question_params)
+    @question.user_id = current_user.id
 
     respond_to do |format|
       if @question.save
@@ -69,7 +70,7 @@ class QuestionsController < ApplicationController
   private
   # Use callbacks to share common setup or constraints between actions.
   def set_question
-    @question = Question.find(params[:id])
+    @question = current_user.questions.find(params[:id])
   end
 
   # Only allow a list of trusted parameters through.
