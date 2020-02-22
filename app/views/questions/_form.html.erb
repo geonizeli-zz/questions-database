@@ -1,7 +1,7 @@
 <%= form_with(model: question, local: true) do |form| %>
   <% if question.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(question.errors.count, "error") %> prohibited this question from being saved:</h2>
+    <div id='error_explanation'>
+      <h2><%= pluralize(question.errors.count, 'error') %> prohibited this question from being saved:</h2>
 
       <ul>
         <% question.errors.full_messages.each do |message| %>
@@ -11,17 +11,23 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class='input-field'>
     <%= form.text_field :title, placeholder: 'Title' %>
   </div>
 
-  <div class="field">
+  <div class='input-field'>
     <%= form.rich_text_area :content %>
   </div>
 
-  <div class="actions">
-    <button class="btn waves-effect waves-light right" type="submit" name="action">Submit
-      <i class="material-icons right">send</i>
+  <div class='input-field'>
+    <%= form.select(:difficulty, @difficulty_options,
+                    { include_blank: false },
+                    class:'browser-default') %>
+  </div>
+
+  <div class='actions'>
+    <button class='btn waves-effect waves-light right' type='submit' name='action'>Submit
+      <i class='material-icons right'>send</i>
     </button>
   </div>
 <% end %>

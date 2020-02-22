@@ -15,4 +15,9 @@
   <%= @question.content %>
 </blockquote>
 
+<p>
+  <strong>Difficulty: </strong>
+  <%= @question.difficulty %>
+</p>
+
 <%= link_to 'edit', edit_question_path(@question), class: 'btn right'%>

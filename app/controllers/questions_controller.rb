@@ -1,5 +1,6 @@
 class QuestionsController < ApplicationController
   before_action :set_question, only: [:show, :edit, :update, :destroy]
+  before_action :set_difficultys_options, only: [:new, :edit, :update, :create]
 
   # GET /questions
   # GET /questions.json
@@ -69,6 +70,10 @@ class QuestionsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def question_params
-    params.require(:question).permit(:title, :content)
+    params.require(:question).permit(:title, :content, :difficulty)
+  end
+
+  def set_difficultys_options
+    @difficulty_options = [['Level 1', '1'], ['Level 2', '2'], ['Level 3', '3'], ['Level 4', '4'], ['Level 5', '5']]
   end
 end

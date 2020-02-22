@@ -3,4 +3,5 @@ class Question < ApplicationRecord
 
   validates :title, :content, presence: true
 
+  validates :difficulty, numericality: { greater_than: 0, less_than: 6 }
 end
