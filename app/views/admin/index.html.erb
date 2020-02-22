@@ -10,14 +10,20 @@
   <table>
     <thead>
       <th>Access</th>
+      <th>Email</th>
       <th>Questions</th>
-      <th></th>
     </thdead>
     <tbody>
       <% @users.each do |user| %>
-      <td><%= user.name %></td>
-      <td><%= user.questions.count %></td>
+      <tr>
+        <td><%= user.name %></td>
+        <td><%= user.email %></td>
+        <td><%= user.questions.count %></td>
+      </tr>
       <% end %>
     </tbody>
   </table>
+
+  <%= link_to 'New access', new_user_registration_path,
+      class: 'btn right' %>
 </div>

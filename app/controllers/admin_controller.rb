@@ -1,6 +1,6 @@
 class AdminController < ApplicationController
   before_action :authenticate_user!
-  before_action :is_admin?
+  before_action :admin?
 
   def index
     @users = User.all
@@ -8,7 +8,7 @@ class AdminController < ApplicationController
 
   private
 
-  def is_admin?
+  def admin?
     return true if current_user.admin
 
     redirect_to questions_path

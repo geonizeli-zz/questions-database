@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
-  devise_for :users
+  root to: 'questions#index'
+
+  devise_for :users, controllers: { registrations: "registrations" }
 
   resources :questions
   resources :admin
-
-  root to: 'questions#index'
 end
