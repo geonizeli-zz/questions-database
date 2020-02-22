@@ -1,0 +1,23 @@
+<%= render 'menu' %>
+
+<div class='container animated fadeInRight faster'>
+
+<div class='header'>
+  <h1>Overview</h1>
+</div>
+
+<div>
+  <table>
+    <thead>
+      <th>Access</th>
+      <th>Questions</th>
+      <th></th>
+    </thdead>
+    <tbody>
+      <% @users.each do |user| %>
+      <td><%= user.name %></td>
+      <td><%= user.questions.count %></td>
+      <% end %>
+    </tbody>
+  </table>
+</div>
