@@ -1,8 +1,9 @@
 @import "materialize";
+@import "material_icons";
 @import "./actiontext.scss";
+@import "./questions.scss";
 
 .container {
-  max-width: 800px;
-  padding-top: 5%;
+  max-width: 1000px;
   padding-bottom: 5%;
 }

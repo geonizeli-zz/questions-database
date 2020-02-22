@@ -1,13 +1,18 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @question.title %>
-</p>
+<div class='header'>
+  <h1>
+    <strong>Question:</strong>
+    <%= @question.title %>
+  </h1>
+  <a class="btn-floating btn-large waves-effect waves-light red"
+      href= <%= questions_path %> >
+      <i class="material-icons">arrow_back</i>
+  </a>
+</div>
 
-<p>
+<blockquote class='flow-text'>
   <%= @question.content %>
-</p>
+</blockquote>
 
-<%= link_to 'Edit', edit_question_path(@question) %> |
-<%= link_to 'Back', questions_path %>
+<%= link_to 'edit', edit_question_path(@question), class: 'btn right'%>
