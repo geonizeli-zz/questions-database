@@ -7,6 +7,7 @@ gem 'pg', '~> 1.2.2'
 gem 'puma', '~> 4.1'
 gem 'sass-rails', '>= 6'
 gem 'webpacker', '~> 4.0'
+gem 'image_processing'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.7'
 
@@ -16,6 +17,7 @@ gem 'materialize-sass', '~> 1.0.0'
 gem 'material_icons'
 
 gem 'bootsnap', '>= 1.4.2', require: false
+gem 'mini_magick'
 
 group :development, :test do
   gem 'awesome_print', '~> 1.8'
