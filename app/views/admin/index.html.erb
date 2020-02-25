@@ -1,12 +1,19 @@
 <%= render 'menu' %>
 
-<div class='container animated fadeInRight faster'>
+<div class='container animated fadeInLeft faster'>
 
 <div class='header'>
   <h1>Overview</h1>
 </div>
 
 <div>
+  <div class='header'>
+    <h3>Access</h3>
+    <a class='btn-floating btn-large waves-effect waves-light red'
+       href= <%= new_user_registration_path %>>
+      <i class='material-icons'>add</i>
+    </a>
+  </div>
   <table>
     <thead>
       <th>Access</th>
@@ -24,6 +31,55 @@
     </tbody>
   </table>
 
-  <%= link_to 'New access', new_user_registration_path,
-      class: 'btn right' %>
+</div>
+
+<div>
+  <div class='header'>
+  <h3>Courses</h3>
+    <a class='btn-floating btn-large waves-effect waves-light red'
+       href= <%= new_course_path %>>
+      <i class='material-icons'>add</i>
+    </a>
+  </div>
+  <table>
+    <thead>
+      <th>Name</th>
+      <th></th>
+    </thdead>
+    <tbody>
+      <% @courses.each do |course| %>
+      <tr>
+        <td><%= course.name %></td>
+        <td><%= link_to 'Details', course %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+</div>
+
+<div>
+  <div class='header'>
+    <h3>Subjects</h3>
+    <a class='btn-floating btn-large waves-effect waves-light red'
+       href= <%= new_subject_path %>>
+      <i class='material-icons'>add</i>
+    </a>
+  </div>
+
+  <table>
+    <thead>
+      <th>Name</th>
+      <th></th>
+    </thdead>
+    <tbody>
+      <% @subjects.each do |subject| %>
+      <tr>
+        <td><%= subject.name %></td>
+        <td><%= link_to 'Details', subject %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+
 </div>

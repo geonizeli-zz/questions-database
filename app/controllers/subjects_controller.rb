@@ -1,28 +1,21 @@
 class SubjectsController < ApplicationController
   before_action :set_subject, only: [:show, :edit, :update, :destroy]
+  before_action :set_courses
 
-  # GET /subjects
-  # GET /subjects.json
+  layout 'authenticate_user'
+
   def index
     @subjects = Subject.all
   end
 
-  # GET /subjects/1
-  # GET /subjects/1.json
-  def show
-  end
+  def show; end
 
-  # GET /subjects/new
   def new
     @subject = Subject.new
   end
 
-  # GET /subjects/1/edit
-  def edit
-  end
+  def edit; end
 
-  # POST /subjects
-  # POST /subjects.json
   def create
     @subject = Subject.new(subject_params)
 
@@ -37,8 +30,6 @@ class SubjectsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /subjects/1
-  # PATCH/PUT /subjects/1.json
   def update
     respond_to do |format|
       if @subject.update(subject_params)
@@ -51,8 +42,6 @@ class SubjectsController < ApplicationController
     end
   end
 
-  # DELETE /subjects/1
-  # DELETE /subjects/1.json
   def destroy
     @subject.destroy
     respond_to do |format|
@@ -62,13 +51,16 @@ class SubjectsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_subject
-      @subject = Subject.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def subject_params
-      params.require(:subject).permit(:name)
-    end
+  def set_subject
+    @subject = Subject.find(params[:id])
+  end
+
+  def set_courses
+    @courses = Course.all.pluck(:name, :id)
+  end
+
+  def subject_params
+    params.require(:subject).permit(:name, course_ids: [])
+  end
 end

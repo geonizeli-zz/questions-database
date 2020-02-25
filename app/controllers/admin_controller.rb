@@ -4,6 +4,8 @@ class AdminController < ApplicationController
 
   def index
     @users = User.all
+    @subjects = Subject.all
+    @courses = Course.all
   end
 
   private

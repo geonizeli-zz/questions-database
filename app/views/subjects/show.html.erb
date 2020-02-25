@@ -1,9 +1,22 @@
+<div class='container animated slideInRight fast'>
+
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @subject.name %>
-</p>
+<div class='header'>
+  <h1>
+    <strong>Name:</strong>
+    <%= @subject.name %>
+  </h1>
+  <a class="btn-floating btn-large waves-effect waves-light red"
+    href= <%= admin_index_path %> >
+    <i class="material-icons">arrow_back</i>
+  </a>
+</div>
 
-<%= link_to 'Edit', edit_subject_path(@subject) %> |
-<%= link_to 'Back', subjects_path %>
+<p>Has: <% @subject.courses.each do |course| %>
+          <%= course.name %>
+        <% end %>
+
+<%= link_to 'Edit', edit_subject_path(@subject), class: 'btn right' %>
+
+</div>

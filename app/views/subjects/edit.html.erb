@@ -1,6 +1,12 @@
-<h1>Editing Subject</h1>
+<div class='container animated slideInRight fast'>
 
+<div class='header'>
+  <h1>Editing Subject</h1>
+  <a class="btn-floating btn-large waves-effect waves-light red"
+    href= <%= admin_index_path %> >
+    <i class="material-icons">arrow_back</i>
+  </a>
+</div>
 <%= render 'form', subject: @subject %>
 
-<%= link_to 'Show', @subject %> |
-<%= link_to 'Back', subjects_path %>
+</div>
