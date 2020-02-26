@@ -15,6 +15,7 @@ gem 'devise', '~> 4.7', '>= 4.7.1'
 
 gem 'materialize-sass', '~> 1.0.0'
 gem 'material_icons'
+gem 'simple_form'
 
 gem 'bootsnap', '>= 1.4.2', require: false
 gem 'mini_magick'
