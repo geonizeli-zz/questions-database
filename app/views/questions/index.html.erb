@@ -14,7 +14,7 @@
   <tbody>
     <% @questions.each do |question| %>
       <tr class='highlight' data-href= <%= question %> >
-        <td><%= question.title %></td>
+        <td class='just_column_name'><%= question.title %></td>
         <td><%= link_to 'visibility', question, class: 'material-icons' %></td>
         <td><%= link_to 'edit', edit_question_path(question), class: 'material-icons' %></td>
         <td><%= link_to 'delete', question, method: :delete, data: { confirm: 'Are you sure?' }, class: 'material-icons' %></td>

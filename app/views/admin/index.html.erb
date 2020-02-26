@@ -43,14 +43,18 @@
   </div>
   <table>
     <thead>
-      <th>Name</th>
+      <th class='just_column_name'>Name</th>
+      <th></th>
+      <th></th>
       <th></th>
     </thdead>
     <tbody>
       <% @courses.each do |course| %>
       <tr>
         <td><%= course.name %></td>
-        <td><%= link_to 'Details', course %></td>
+        <td><%= link_to 'visibility', course, class: 'material-icons' %></td>
+        <td><%= link_to 'edit', edit_course_path(course), class: 'material-icons' %></td>
+        <td><%= link_to 'delete', course, method: :delete, data: { confirm: 'Are you sure?' }, class: 'material-icons' %></td>
       </tr>
       <% end %>
     </tbody>
@@ -69,14 +73,18 @@
 
   <table>
     <thead>
-      <th>Name</th>
+      <th class='just_column_name'>Name</th>
+      <th></th>
+      <th></th>
       <th></th>
     </thdead>
     <tbody>
       <% @subjects.each do |subject| %>
       <tr>
         <td><%= subject.name %></td>
-        <td><%= link_to 'Details', subject %></td>
+        <td><%= link_to 'visibility', subject, class: 'material-icons' %></td>
+        <td><%= link_to 'edit', edit_subject_path(subject), class: 'material-icons' %></td>
+        <td><%= link_to 'delete', subject, method: :delete, data: { confirm: 'Are you sure?' }, class: 'material-icons' %></td>
       </tr>
       <% end %>
     </tbody>
