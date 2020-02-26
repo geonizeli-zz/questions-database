@@ -3,8 +3,9 @@ Rails.application.routes.draw do
 
   devise_for :users, controllers: { registrations: "registrations" }
 
-  resources :questions
-  resources :admin
   resources :courses
   resources :subjects
+  resources :questions
+
+  resources :admin, only: [:index, :destroy]
 end

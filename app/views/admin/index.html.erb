@@ -1,5 +1,7 @@
 <div class='container animated fadeInLeft faster'>
 
+<p id="notice"><%= notice %></p>
+
 <div class='header'>
   <h1>Overview</h1>
 </div>
@@ -17,6 +19,7 @@
       <th>Access</th>
       <th>Email</th>
       <th>Questions</th>
+      <th><th>
     </thdead>
     <tbody>
       <% @users.each do |user| %>
@@ -24,6 +27,7 @@
         <td><%= user.name %></td>
         <td><%= user.email %></td>
         <td><%= user.questions.count %></td>
+        <td><%= link_to 'delete', admin_path(user.id), method: :delete, data: { confirm: 'Are you sure?' }, class: 'material-icons' %></td>
       </tr>
       <% end %>
     </tbody>
