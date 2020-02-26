@@ -15,7 +15,10 @@
     <%= f.text_field :name, placeholder: 'Name' %>
   </div>
 
-  <%= f.association :subjects, as: :check_boxes %>
+  <div class="field">
+    <%= f.label :courses %>
+    <%= f.association :subjects, as: :check_boxes, label: false %>
+  </div>
 
   <div class='actions'>
     <button class='btn waves-effect waves-light right' type='submit' name='action'>Submit
