@@ -21,3 +21,23 @@
 
   h1
     margin: 0;
+
+// Fix checkbox materalize + simple_form
+.check_boxes
+  display: flex
+  flex-direction: column
+
+  .checkbox
+    label
+      color: #000000
+      font-size: 15px
+
+      [type="checkbox"]:not(:checked), [type="checkbox"]:checked
+        width: 1.4rem
+        height: 1.4rem
+        opacity: 100
+        position: relative
+        font-size: 3rem
+        display: inline-block
+        margin: 1rem
+        margin-right: 0.5rem
