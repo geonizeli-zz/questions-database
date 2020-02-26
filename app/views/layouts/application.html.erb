@@ -7,6 +7,7 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag '//widget.cloudinary.com/v2.0/global/all.js', defer: true %>
   </head>
 
   <body>
@@ -14,6 +15,7 @@
   <%= yield %>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <%= javascript_pack_tag 'cloudinary-uploader' %>
 
   </body>
 </html>

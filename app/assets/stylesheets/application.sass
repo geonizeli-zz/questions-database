@@ -4,12 +4,6 @@
 
 @import "./actiontext.sass";
 
-.container
-  max-width: 1000px;
-  padding-top: 10px;
-  padding-bottom: 5%;
-
-
 .actions
   margin-top: 10px;
 
@@ -45,3 +39,32 @@
 
 .just_column_name
   width: 80%
+
+// photo cloudinary
+.profile_photo
+  position: relative
+  text-align: center
+
+  a:hover div
+    opacity: 1
+  img
+    opacity: 1
+    height: auto
+    transition: .5s ease
+    backface-visibility: hidden
+    border-radius: 50%
+    &:hover
+      opacity: 0.3
+
+  div
+    transition: .5s ease;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+  i
+    color: #575757da
+    font-size: 2.5rem

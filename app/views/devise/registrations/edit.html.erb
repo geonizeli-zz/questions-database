@@ -12,6 +12,20 @@
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
+  <div class="profile_photo">
+    <a id="cloudinary" data-folder="users" data-img="cloudinary-uploader-img" data-field="cloudinary-uploader-field" class="cloudinary-uploader" href="#">
+      <%= cl_image_tag(current_user.avatar,
+                       fetch_format: :auto, width: 150, crop: :fill, alt: 'Define avatar to your profile' ,
+                       id: 'cloudinary-uploader-img',
+                       cloud_name: 'dajfqc1om') %>
+      <div>
+        <i class="material-icons">edit</i>
+      </div>
+    </a>
+  </div>
+
+  <%= f.hidden_field :avatar, id: 'cloudinary-uploader-field' %>
+
   <div class="field">
     <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: 'E-mail' %>
   </div>
