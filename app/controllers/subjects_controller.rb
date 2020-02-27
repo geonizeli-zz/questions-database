@@ -4,10 +4,6 @@ class SubjectsController < ApplicationController
 
   layout 'authenticate_user'
 
-  def index
-    @subjects = Subject.all
-  end
-
   def show; end
 
   def new
