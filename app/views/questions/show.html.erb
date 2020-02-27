@@ -1,27 +1,33 @@
 <div class='container animated slideInRight fast'>
 
-<p id="notice"><%= notice %></p>
+<% if notice %>
+  <p class="alert" id="notice"><%= notice %></p>
+<% end %>
 
 <div class='header'>
   <h1>
-    <strong>Question:</strong>
-    <%= @question.title %>
+    <strong>Question</strong>
   </h1>
-  <a class="btn-floating btn-large waves-effect waves-light red"
+  <a class="btn-floating btn-large waves-effect waves-light"
       href= <%= questions_path %> >
       <i class="material-icons">arrow_back</i>
   </a>
 </div>
 
-<blockquote class='flow-text'>
-  <%= @question.content %>
-</blockquote>
+<div class='box'>
+  <h3><%= @question.title %></h3>
 
-<p>
-  <strong>Difficulty: </strong>
-  <%= @question.difficulty %>
-</p>
+  <blockquote class='flow-text'>
+    <%= @question.content %>
+  </blockquote>
 
-<%= link_to 'edit', edit_question_path(@question), class: 'btn right'%>
+  <p>
+    <strong>Difficulty: </strong>
+    <%= @question.difficulty %>
+  </p>
 
+  <div class='actions'>
+    <%= link_to 'edit', edit_question_path(@question), class: 'btn right'%>
+  </div>
+</div>
 </div>

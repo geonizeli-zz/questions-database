@@ -3,6 +3,20 @@
 @import url("https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css");
 
 @import "./actiontext.sass";
+@import "./fix_checkbox.sass";
+@import './profile_photo_effects.sass';
+
+body
+  background-color: #f2f2f2
+
+nav
+  background: #0c5460
+.container
+  padding-top: 20px
+  width: 80%
+  margin-bottom: 50px
+  h1
+    font-size: 3.8rem
 
 .brand-logo
   img
@@ -11,65 +25,37 @@
 
 .actions
   margin-top: 10px;
+  .btn
+    margin-top: 30px
 
 .header
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-
+  display: flex
+  flex-direction: row
+  align-items: center
+  justify-content: space-between
   h1
     margin: 0;
 
-// Fix checkbox materalize + simple_form
-.check_boxes
-  font-size: 16px
-  display: flex
-  flex-direction: column
-
-  .checkbox
-    label
-      color: #000000
-      font-size: 15px
-
-      [type="checkbox"]:not(:checked), [type="checkbox"]:checked
-        width: 1.4rem
-        height: 1.4rem
-        opacity: 100
-        position: relative
-        font-size: 3rem
-        display: inline-block
-        margin: 0.5rem
-        margin-right: 0.5rem
+table
+  margin: 10px
+  background-color: #ffffff
+  border-radius: 5px
 
 .just_column_name
-  width: 80%
+  width: 70%
 
-// photo cloudinary
-.profile_photo
-  position: relative
-  text-align: center
+.alert
+  background-color: #d1ecf1
+  border: 1px solid #bee5eb
+  border-radius: 5px
+  color: #0c5460
+  padding: 5px
 
-  a:hover div
-    opacity: 1
-  img
-    opacity: 1
-    height: auto
-    transition: .5s ease
-    backface-visibility: hidden
-    border-radius: 50%
-    &:hover
-      opacity: 0.3
-
-  div
-    transition: .5s ease;
-    opacity: 0;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    text-align: center;
-  i
-    color: #575757da
-    font-size: 2.5rem
+.field, .box
+  margin: 10px
+  padding: 10px
+  border-radius: 5px
+  background: #ffffff
+.box
+  h3
+    margin-top: 0

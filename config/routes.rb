@@ -3,8 +3,8 @@ Rails.application.routes.draw do
 
   devise_for :users, controllers: { registrations: "registrations" }
 
-  resources :courses
-  resources :subjects
+  resources :courses, except: [:index]
+  resources :subjects, except: [:index]
   resources :questions
 
   resources :admin, only: [:index, :destroy]

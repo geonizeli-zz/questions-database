@@ -1,15 +1,13 @@
-<div class='container animated fadeInLeft faster'>
+<div class='container animated slideInLeft fast'>
 
-<p id="notice"><%= notice %></p>
-
-<div class='header'>
-  <h1>Overview</h1>
-</div>
+<% if notice %>
+  <p class="alert" id="notice"><%= notice %></p>
+<% end %>
 
 <div>
   <div class='header'>
     <h3>Access</h3>
-    <a class='btn-floating btn-large waves-effect waves-light red'
+    <a class='btn-floating btn-large waves-effect waves-light'
        href= <%= new_user_registration_path %>>
       <i class='material-icons'>add</i>
     </a>
@@ -32,13 +30,12 @@
       <% end %>
     </tbody>
   </table>
-
 </div>
 
 <div>
   <div class='header'>
   <h3>Courses</h3>
-    <a class='btn-floating btn-large waves-effect waves-light red'
+    <a class='btn-floating btn-large waves-effect waves-light'
        href= <%= new_course_path %>>
       <i class='material-icons'>add</i>
     </a>
@@ -67,7 +64,7 @@
 <div>
   <div class='header'>
     <h3>Subjects</h3>
-    <a class='btn-floating btn-large waves-effect waves-light red'
+    <a class='btn-floating btn-large waves-effect waves-light'
        href= <%= new_subject_path %>>
       <i class='material-icons'>add</i>
     </a>
@@ -91,5 +88,6 @@
       <% end %>
     </tbody>
   </table>
+</div>
 
 </div>

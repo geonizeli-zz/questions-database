@@ -1,17 +1,11 @@
 <nav>
   <div class="nav-wrapper">
     <a href="#!" class="brand-logo"><%= image_tag 'UNIFESO-BRANCO.png'%></a>
-    <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
 
-    <ul class="right hide-on-med-and-down">
+    <ul class="right">
       <li><%= link_to 'Questions', questions_path %></li>
       <li><%= link_to 'Settings', edit_user_registration_path %></li>
       <li><%= link_to 'Exit', destroy_user_session_path, method: :delete %></li>
     </ul>
   </div>
 </nav>
-
-<ul class="sidenav" id="mobile-demo">
-  <li><%= link_to 'Settings', edit_user_registration_path %></li>
-  <li><%= link_to 'Exit', destroy_user_session_path %></li>
-</ul>

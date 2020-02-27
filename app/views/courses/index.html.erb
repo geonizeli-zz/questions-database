@@ -1,6 +1,8 @@
 <div class='container animated slideInRight fast'>
 
-<p id="notice"><%= notice %></p>
+<% if notice %>
+  <p class="alert" id="notice"><%= notice %></p>
+<% end %>
 
 <h1>Courses</h1>
 
@@ -24,7 +26,6 @@
   </tbody>
 </table>
 
-<br>
 
 <%= link_to 'New Course', new_course_path %>
 

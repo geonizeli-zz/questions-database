@@ -1,22 +1,30 @@
 <div class='container animated slideInRight fast'>
 
-<p id="notice"><%= notice %></p>
+<% if notice %>
+  <p class="alert" id="notice"><%= notice %></p>
+<% end %>
 
 <div class='header'>
   <h1>
-    <strong>Name:</strong>
-    <%= @course.name %>
+    Course
   </h1>
-  <a class="btn-floating btn-large waves-effect waves-light red"
+  <a class="btn-floating btn-large waves-effect waves-light"
     href= <%= admin_index_path %> >
     <i class="material-icons">arrow_back</i>
   </a>
 </div>
 
-<p>Has: <% @course.subjects.each do |subject| %>
-          <%= subject.name %>
-        <% end %>
-
-<%= link_to 'Edit', edit_course_path(@course), class: 'btn right' %>
-
+<div class='box'>
+  <h3><%= @course.name %></h3>
+  <% unless @course.subjects.empty? %>
+    <p>Has: <% @course.subjects.each do |subject| %>
+              <%= subject.name %>
+            <% end %>
+  <% else %>
+    <p>This course is not linked to any subjects.</p>
+  <% end %>
+  <div class='actions'>
+    <%= link_to 'Edit', edit_course_path(@course), class: 'btn right' %>
+  </div>
+</div>
 </div>
