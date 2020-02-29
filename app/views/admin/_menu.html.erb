@@ -1,11 +1,31 @@
-<nav>
-  <div class="nav-wrapper">
-    <a href="#!" class="brand-logo"><%= image_tag 'UNIFESO-BRANCO.png'%></a>
 
-    <ul class="right">
-      <li><%= link_to 'Questions', questions_path %></li>
-      <li><%= link_to 'Settings', edit_user_registration_path %></li>
-      <li><%= link_to 'Exit', destroy_user_session_path, method: :delete %></li>
-    </ul>
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a class="navbar-item" href="https://bulma.io">
+      <%= image_tag 'UNIFESO-BRANCO.png' %>
+    </a>
+
+    <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+
+  <div id="navbarBasicExample" class="navbar-menu">
+    <div class="navbar-start">
+      <% if current_user.admin %>
+        <%= link_to 'Questions', questions_path, class: 'navbar-item' %>
+      <% end %>
+    </div>
+
+    <div class="navbar-end">
+      <div class="navbar-item">
+        <div class="buttons">
+            <%= link_to 'Settings', edit_user_registration_path, class: 'button is-primary' %>
+            <%= link_to 'Exit', destroy_user_session_path, method: :delete, class: 'button is-primary' %>
+        </div>
+      </div>
+    </div>
   </div>
 </nav>
