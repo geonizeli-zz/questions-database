@@ -1,23 +1,18 @@
-development:
+default: &default
   adapter: postgresql
   encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  host: postgres
+  user: postgres
+
+development:
+  <<: *default
   database: unifeso_development
-  pool: 5
-  username: rails
-  password:
 
 test:
-  adapter: postgresql
-  encoding: unicode
+  <<: *default
   database: unifeso_test
-  pool: 5
-  username: rails
-  password:
 
 production:
-  adapter: postgresql
-  encoding: unicode
+  <<: *default
   database: unifeso_production
-  pool: 5
-  username: rails
-  password:
