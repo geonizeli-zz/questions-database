@@ -1,24 +1,27 @@
+
 # README
+## Project dependencies
+* Ruby 2.6.5
+* Rails 6.0.2
+* Postgres 12.2
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Project tools
+- [Devise](https://github.com/heartcombo/devise)
+- [Simple Form](https://github.com/heartcombo/simple_form)
+- [Action Text](https://edgeguides.rubyonrails.org/action_text_overview.html)
+- [Materialize](https://materializecss.com/)
+- [Material Icons](https://github.com/Angelmmiguel/material_icons)
+- [Animate.css](https://daneden.github.io/animate.css/)
+- [Cloudinary Widget](https://cloudinary.com/documentation/upload_widget)
 
-Things you may want to cover:
+## Setup
 
-* Ruby version
+    bundle install
+    rails db:create db:migrate db:seed
+    rails server
 
-* System dependencies
+## Setup Docker
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+    docker-compose build
+    docker-compose run --rm web bundle exec rails db:migrate db:seed
+    docker-compose up
