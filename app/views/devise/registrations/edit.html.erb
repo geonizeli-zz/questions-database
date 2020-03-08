@@ -1,5 +1,4 @@
 <div class='container'>
-<div class='container'>
 
 <div class='header'>
   <h2>Edit <%= resource_name.to_s.humanize %></h2>
@@ -13,7 +12,11 @@
   <%= render "devise/shared/error_messages", resource: resource %>
 
   <div class="profile_photo">
-    <a id="cloudinary" data-folder="users" data-img="cloudinary-uploader-img" data-field="cloudinary-uploader-field" class="cloudinary-uploader" href="#">
+    <a id="cloudinary-btn"
+       data-folder="users"
+       data-img="cloudinary-uploader-img"
+       data-field="cloudinary-uploader-field"
+       class="cloudinary-uploader">
       <%= cl_image_tag(current_user.avatar,
                        fetch_format: :auto, width: 150, crop: :fill, alt: 'Define avatar to your profile' ,
                        id: 'cloudinary-uploader-img',
