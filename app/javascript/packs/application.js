@@ -5,9 +5,7 @@ require("channels")
 require("trix")
 require("@rails/actiontext")
 
-/* global $, cloudinary, ModalMessage */
-
-var getCloudinaryConfig = function() {
+let getCloudinaryConfig = function() {
   return {
     cloudName: 'dajfqc1om',
     uploadPreset: 'unifeso',
@@ -150,26 +148,32 @@ var getCloudinaryConfig = function() {
   }
 };
 
-$('.cloudinary-uploader').click(
-  function (e) {
-    var config = {
-      showSkipCropButton: true,
-      croppingAspectRatio: 1,
-      folder: $(this)[0].dataset.folder
-    }
 
-    cloudinary.openUploadWidget({
-      ...getCloudinaryConfig(),
-      ...config,
-    },
-      (err, result) => {
-        if (!err) {
-          if (result.event === 'success') {
-            document.getElementById('cloudinary-uploader-img').src = result.info.url
-            document.getElementById('cloudinary-uploader-field').value = result.info.public_id
+function pollDOM () {
+  const el = document.getElementById('cloudinary-btn');
+
+  if (el != null) {
+    document.getElementById("cloudinary-btn").addEventListener("click",
+      function eventHandler(event) {
+        cloudinary.openUploadWidget({
+          ...getCloudinaryConfig(),
+          ...{showSkipCropButton: true},
+          ...{croppingAspectRatio: 1},
+        },
+        (err, result) => {
+          if (!err) {
+            if (result.event === 'success') {
+              document.getElementById('cloudinary-uploader-img').src = result.info.url
+              document.getElementById('cloudinary-uploader-field').value = result.info.public_id
+            }
           }
         }
+        )
       }
     )
+  } else {
+    setTimeout(pollDOM, 300);
   }
-)
+}
+
+pollDOM();
