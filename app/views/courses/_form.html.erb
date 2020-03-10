@@ -17,8 +17,13 @@
   </div>
 
   <div class="field">
-    <%= f.label :courses %>
-    <%= f.association :subjects, as: :check_boxes, label: false %>
+    <%= f.label :subjects %>
+    <% unless @subjects.empty? %>
+      <%= f.association :subjects, as: :check_boxes, label: false %>
+    <% else %>
+      <p>No other subjects defined.</p>
+      <%= link_to 'Create', new_subject_path %>
+    <% end %>
   </div>
 
   <div class='actions'>
