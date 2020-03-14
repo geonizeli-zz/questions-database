@@ -3,7 +3,7 @@
 <% end %>
 
 <div class='header'>
-  <h3>Questions</h3>
+  <h3><%= I18n.t 'page.questions.index.header' %></h3>
   <a class='btn-floating btn-large waves-effect waves-light'
      href= <%= new_question_path %>>
     <i class='material-icons'>add</i>
@@ -24,5 +24,5 @@
     </tbody>
   </table>
 <% else %>
-  <p>You haven't registered a question yet.<p>
+  <p><%= I18n.t 'page.questions.index.have_not' %><p>
 <% end %>

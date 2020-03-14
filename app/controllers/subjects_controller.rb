@@ -15,7 +15,7 @@ class SubjectsController < ApplicationController
 
     respond_to do |format|
       if @subject.save
-        format.html { redirect_to admin_index_path, notice: 'Subject was successfully created.' }
+        format.html { redirect_to admin_index_path, notice: I18n.t('alert.course.create') }
         format.json { render :show, status: :created, location: @subject }
       else
         format.html { render :new }
@@ -27,7 +27,7 @@ class SubjectsController < ApplicationController
   def update
     respond_to do |format|
       if @subject.update(subject_params)
-        format.html { redirect_to admin_index_path, notice: 'Subject was successfully updated.' }
+        format.html { redirect_to admin_index_path, notice: I18n.t('alert.course.update') }
         format.json { render :show, status: :ok, location: @subject }
       else
         format.html { render :edit }
@@ -39,7 +39,7 @@ class SubjectsController < ApplicationController
   def destroy
     @subject.destroy
     respond_to do |format|
-      format.html { redirect_to admin_index_path, notice: 'Subject was successfully destroyed.' }
+      format.html { redirect_to admin_index_path, notice: I18n.t('alert.course.delete') }
       format.json { head :no_content }
     end
   end

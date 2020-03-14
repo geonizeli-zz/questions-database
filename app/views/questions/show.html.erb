@@ -3,9 +3,8 @@
 <% end %>
 
 <div class='header'>
-  <h1>
-    <strong>Question</strong>
-  </h1>
+  <h3><%= I18n.t 'page.questions.show.header' %></h3>
+
   <a class="btn-floating btn-large waves-effect waves-light"
       href= <%= questions_path %> >
       <i class="material-icons">arrow_back</i>
@@ -20,7 +19,7 @@
   </blockquote>
 
   <p>
-    <strong>Difficulty: </strong>
+    <strong><%= I18n.t 'page.questions.show.difficulty' %></strong>
     <%= @question.difficulty %>
   </p>
 

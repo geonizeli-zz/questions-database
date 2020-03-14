@@ -4,7 +4,7 @@
 
 <div>
   <div class='header'>
-    <h3>Access</h3>
+    <h3><%= I18n.t('page.admin.index.access.header') %></h3>
     <a class='btn-floating btn-large waves-effect waves-light'
        href= <%= new_user_registration_path %>>
       <i class='material-icons'>add</i>
@@ -14,9 +14,9 @@
   <% unless @users.count == 1 %>
     <table>
       <thead>
-        <th>Access</th>
-        <th>Email</th>
-        <th>Questions</th>
+        <th><%= I18n.t('page.admin.index.access.table.access') %></th>
+        <th><%= I18n.t('page.admin.index.access.table.email') %></th>
+        <th><%= I18n.t('page.admin.index.access.table.questions') %></th>
         <th><th>
       </thdead>
       <tbody>
@@ -33,13 +33,13 @@
       </tbody>
     </table>
   <% else %>
-  <p>No other accesses defined.</p>
+  <p><%= I18n.t('page.admin.index.access.have_not') %></p>
   <% end %>
 </div>
 
 <div>
   <div class='header'>
-  <h3>Courses</h3>
+  <h3><%= I18n.t('page.admin.index.courses.header') %></h3>
     <a class='btn-floating btn-large waves-effect waves-light'
        href= <%= new_course_path %>>
       <i class='material-icons'>add</i>
@@ -49,7 +49,7 @@
   <% unless @courses.empty? %>
     <table>
       <thead>
-        <th class='just_column_name'>Name</th>
+        <th class='just_column_name'><%= I18n.t('page.admin.index.courses.table.name') %></th>
         <th></th>
         <th></th>
         <th></th>
@@ -66,6 +66,6 @@
       </tbody>
     </table>
   <% else %>
-    <p>There is no defined subject yet.</p>
+    <p><%= I18n.t('page.admin.index.courses.have_not') %></p>
   <% end %>
 </div>

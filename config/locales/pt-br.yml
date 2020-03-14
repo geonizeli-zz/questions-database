@@ -1,28 +1,28 @@
-en:
+pt-BR:
   nav:
-    overview: Overview
-    questions: Questions
-    profile: Profile
-    exit: Exit
+    overview: Visão Geral
+    questions: Questões
+    profile: Perfil
+    exit: Sair
   alert:
-    confirmation: Are you sure?
+    confirmation: Você tem certeza?
     question:
-      create: Question was successfully created.
-      update: Question was successfully updated.
-      delete: Question was successfully destroyed.
+      create: Questão criada com sucesso.
+      update: Questão atualizada com sucesso.
+      delete: Questão excluída com sucesso.
     access:
-      create: Access was successfully created.
-      update: Access was successfully updated.
-      delete: Access was successfully destroyed.
-      destroy_yourself: You can't destroy yourself.
+      create: Acesso criado com sucesso.
+      update: Acesso atualizado com sucesso.
+      delete: Acesso excluído com sucesso.
+      destroy_yourself: Você não pode excluir seu acesso.
     course:
-      create: Course was successfully created.
-      update: Course was successfully updated.
-      delete: Course was successfully destroyed.
+      create: Curso criado com sucesso.
+      update: Curso atualizado com sucesso.
+      delete: Curso excluído com sucesso.
     subject:
-      create: Subject was successfully created.
-      update: Subject was successfully updated.
-      delete: Subject was successfully destroyed.
+      create: Diciplina criada com sucesso.
+      update: Diciplina atualizada com sucesso.
+      delete: Diciplina excluída com sucesso.
   page:
     questions:
       index:

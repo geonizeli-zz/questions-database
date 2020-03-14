@@ -12,13 +12,13 @@ class AdminController < ApplicationController
     if user != current_user
       if user.destroy!
         respond_to do |format|
-          format.html { redirect_to admin_index_path, notice: 'Access removed!' }
+          format.html { redirect_to admin_index_path, notice: I18n.l('alert.access.delete') }
           format.json { head :no_content }
         end
       end
     else
       respond_to do |format|
-        format.html { redirect_to admin_index_path, notice: 'You can\'t destroy yourself' }
+        format.html { redirect_to admin_index_path, notice: I18n.l('alert.access.destroy_yourself') }
         format.json { render json: { message: 'You can\'t destroy yourself' }, status: :unprocessable_entity }
       end
     end
