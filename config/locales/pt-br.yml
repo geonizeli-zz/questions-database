@@ -4,6 +4,7 @@ pt-BR:
     questions: Questões
     profile: Perfil
     exit: Sair
+
   alert:
     confirmation: Você tem certeza?
     question:
@@ -23,11 +24,16 @@ pt-BR:
       create: Diciplina criada com sucesso.
       update: Diciplina atualizada com sucesso.
       delete: Diciplina excluída com sucesso.
+
+  action:
+    save: Salvar
+    edit: Editar
+
   page:
     questions:
       index:
         header: Questões
-        have_not: Você não tem questões registradas ainda
+        have_not: Você não tem questões registradas ainda.
       edit:
         header: Editando questão
       new:
@@ -44,18 +50,17 @@ pt-BR:
         submit: Salvar
         palceholder:
           title: Título
-
     admin:
       index:
         access:
           header: Acessos
-          have_not: Nenhum acesso foi definido ainda
+          have_not: Nenhum acesso foi definido ainda.
           table:
             access: Acesso
             email: E-mail
             questions: Questões
         courses:
           header: Cursos
-          have_not: Nenhum curso foi definido ainda
+          have_not: Nenhum curso foi definido ainda.
           table:
             name: Nome

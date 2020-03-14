@@ -23,39 +23,43 @@ en:
       create: Subject was successfully created.
       update: Subject was successfully updated.
       delete: Subject was successfully destroyed.
+
+  action:
+    save: Save
+    edit: Edit
+
   page:
     questions:
       index:
-        header: Questões
-        have_not: Você não tem questões registradas ainda
+        header: Questions
+        have_not: You haven't registered a question yet.
       edit:
-        header: Editando questão
+        header: Editing Question
       new:
-        header: Nova questão
+        header: New Question
       show:
-        header: Questão
-        difficulty: Dificuldade
+        header: Question
+        difficulty: Difficulty
 
       form:
-        header: Questão
-        title: Título
-        body: Corpo
-        difficulty: Dificuldade
-        submit: Salvar
+        header: Question
+        title: Title
+        body: Body
+        difficulty: Difficulty
+        submit: Save
         palceholder:
-          title: Título
-
+          title: Títle
     admin:
       index:
         access:
-          header: Acessos
-          have_not: Nenhum acesso foi definido ainda
+          header: Access
+          have_not: No other accesses defined.
           table:
-            access: Acesso
+            access: Access
             email: E-mail
-            questions: Questões
+            questions: Questions
         courses:
-          header: Cursos
-          have_not: Nenhum curso foi definido ainda
+          header: Courses
+          have_not: There is no defined course yet.
           table:
-            name: Nome
+            name: Name

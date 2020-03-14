@@ -16,7 +16,6 @@
   </div>
 
   <div class="field">
-    <%= f.label :courses %>
     <% unless @courses.empty? %>
       <%= f.association :courses, as: :check_boxes, label: false %>
     <% else %>
@@ -26,8 +25,9 @@
   </div>
 
   <div class='actions'>
-    <button class='btn waves-effect waves-light right' type='submit' name='action'>Submit
-      <i class='material-icons right'>send</i>
+    <button class='btn waves-effect waves-light right' type='submit' name='action'>
+      <%= I18n.t 'action.save' %>
+      <i class='material-icons right'>save</i>
     </button>
   </div>
 <% end %>
