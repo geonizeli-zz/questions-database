@@ -1,11 +1,9 @@
-<div class='container animated slideInLeft fast'>
-
 <% if notice %>
   <p class="alert animated zoomIn faster" id="notice"><%= notice %></p>
 <% end %>
 
 <div class='header'>
-  <h1>Questions</h1>
+  <h3>Questions</h3>
   <a class='btn-floating btn-large waves-effect waves-light'
      href= <%= new_question_path %>>
     <i class='material-icons'>add</i>
@@ -28,4 +26,3 @@
 <% else %>
   <p>You haven't registered a question yet.<p>
 <% end %>
-</div>

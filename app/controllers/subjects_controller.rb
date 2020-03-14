@@ -2,8 +2,6 @@ class SubjectsController < ApplicationController
   before_action :set_subject, only: [:show, :edit, :update, :destroy]
   before_action :set_courses
 
-  layout 'authenticate_user'
-
   def show; end
 
   def new

@@ -10,22 +10,18 @@ body
   background-color: #f2f2f2
 
 nav
-  overflow: hidden
   background: #0c5460
-  position: fixed
-  top: 0
-  width: 100%
-  z-index: 1
+  margin-bottom: 10px
   img
     margin-left: 20px
     width: 150px
 
+.scroll
+  max-height: 90vh
+  width: 100%
+  overflow-y: auto
+
 .container
-  z-index: -1
-  padding-top: 20px
-  width: 80%
-  margin-top: 50px
-  margin-bottom: 30px
   h1
     font-size: 3.8rem
 
@@ -39,16 +35,15 @@ nav
   flex-direction: row
   align-items: center
   justify-content: space-between
+  margin-bottom: 10px
   h1
     margin: 0
 
 table
-  margin: 10px
   background-color: #ffffff
   border-radius: 5px
-
-.just_column_name
-  width: 70%
+  .just_column_name
+    width: 70%
 
 .alert
   background-color: #d1ecf1
@@ -57,11 +52,8 @@ table
   color: #0c5460
   padding: 5px
 
-.field, .box
+form
   margin: 10px
   padding: 10px
   border-radius: 5px
   background: #ffffff
-.box
-  h3
-    margin-top: 0
