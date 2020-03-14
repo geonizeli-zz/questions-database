@@ -73,38 +73,4 @@
 
 </div>
 
-<div>
-  <div class='header'>
-    <h3>Subjects</h3>
-    <a class='btn-floating btn-large waves-effect waves-light'
-       href= <%= new_subject_path %>>
-      <i class='material-icons'>add</i>
-    </a>
-  </div>
-
-  <% unless @subjects.empty? %>
-    <table>
-      <thead>
-        <th class='just_column_name'>Name</th>
-        <th></th>
-        <th></th>
-        <th></th>
-      </thdead>
-      <tbody>
-        <% @subjects.each do |subject| %>
-        <tr>
-          <td><%= subject.name %></td>
-          <td><%= link_to 'visibility', subject, class: 'material-icons' %></td>
-          <td><%= link_to 'edit', edit_subject_path(subject), class: 'material-icons' %></td>
-          <td><%= link_to 'delete', subject, method: :delete, data: { confirm: 'Are you sure?' }, class: 'material-icons' %></td>
-        </tr>
-        <% end %>
-      </tbody>
-    </table>
-  <% else %>
-    <p>There is no defined subject yet.</p>
-  <% end %>
-
-</div>
-
 </div>
