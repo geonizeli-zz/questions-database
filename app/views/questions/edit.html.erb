@@ -1,8 +1,7 @@
 <div class='header'>
   <h3><%= I18n.t 'page.questions.edit.header' %></h3>
-  <a class="btn-floating btn-large waves-effect waves-light"
-     href= <%= questions_path %> >
+  <%= link_to :back, class: 'btn-floating btn-large waves-effect waves-light' do %>
     <i class="material-icons">arrow_back</i>
-  </a>
+  <% end %>
 </div>
 <%= render 'form', question: @question %>

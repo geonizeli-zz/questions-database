@@ -1,4 +1,13 @@
 pt-BR:
+  breadcrumbs:
+    admin: Admin
+    questions: Questões
+    edit: Editar
+    new: Novo
+    access: Acessos
+    courses: Cursos
+    subjects: Diciplinas
+
   nav:
     overview: Relatórios
     access: Acessos

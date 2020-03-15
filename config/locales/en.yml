@@ -1,4 +1,12 @@
 en:
+  breadcrumbs:
+    admin: Admin
+    questions: Questions
+    edit: Edit
+    new: New
+    access: Access
+    courses: Courses
+    subjects: Subjects
   nav:
     overview: Reports
     access: Access

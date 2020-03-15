@@ -2,13 +2,23 @@ class CoursesController < ApplicationController
   before_action :set_course, only: [:show, :edit, :update, :destroy]
   before_action :set_subjects
 
-  def show; end
+  add_breadcrumb I18n.t('breadcrumbs.admin'), :admin_index_path
+  add_breadcrumb I18n.t('breadcrumbs.courses'), :admin_courses_path
+
+  def show
+    add_breadcrumb @course.name, :course_path
+  end
 
   def new
+    add_breadcrumb I18n.t('breadcrumbs.new'), :new_course_path
+
     @course = Course.new
   end
 
-  def edit; end
+  def edit
+    add_breadcrumb @course.name, :course_path
+    add_breadcrumb I18n.t('breadcrumbs.edit'), :edit_course_path
+  end
 
   def create
     @course = Course.new(course_params)

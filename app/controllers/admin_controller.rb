@@ -2,6 +2,8 @@ class AdminController < ApplicationController
   before_action :authenticate_user!
   before_action :admin?
 
+  add_breadcrumb I18n.t('breadcrumbs.admin'), :admin_index_path
+
   def index
     @difficulty_options = [1, 2, 3, 4, 5]
     @difficulty_questions = Question.new.question_difficulty_count
@@ -12,10 +14,14 @@ class AdminController < ApplicationController
 
   def access
     @users = User.all
+
+    add_breadcrumb I18n.t('breadcrumbs.access'), :admin_access_path
   end
 
   def courses
     @courses = Course.all
+
+    add_breadcrumb I18n.t('breadcrumbs.courses'), :admin_courses_path
   end
 
   def destroy

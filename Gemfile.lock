@@ -65,6 +65,8 @@ GEM
     bindex (0.8.1)
     bootsnap (1.4.5)
       msgpack (~> 1.0)
+    breadcrumbs_on_rails (4.0.0)
+      rails (>= 5.0)
     builder (3.2.4)
     byebug (11.1.1)
     cloudinary (1.13.2)
@@ -269,6 +271,7 @@ PLATFORMS
 DEPENDENCIES
   awesome_print (~> 1.8)
   bootsnap (>= 1.4.2)
+  breadcrumbs_on_rails
   byebug
   cloudinary
   devise (~> 4.7, >= 4.7.1)

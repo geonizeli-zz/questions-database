@@ -4,28 +4,27 @@ class QuestionsController < ApplicationController
   before_action :set_question, only: [:show, :edit, :update, :destroy]
   before_action :set_difficultys_options, only: [:new, :edit, :update, :create]
 
-  # GET /questions
-  # GET /questions.json
+  add_breadcrumb I18n.t('breadcrumbs.questions'), :questions_path
+
   def index
     @questions = current_user.questions
   end
 
-  # GET /questions/1
-  # GET /questions/1.json
   def show
+    add_breadcrumb @question.title, :question_path
   end
 
-  # GET /questions/new
   def new
+    add_breadcrumb I18n.t('breadcrumbs.new'), :new_question_path
+
     @question = Question.new
   end
 
-  # GET /questions/1/edit
   def edit
+    add_breadcrumb @question.title, :question_path
+    add_breadcrumb I18n.t('breadcrumbs.edit'), :edit_question_path
   end
 
-  # POST /questions
-  # POST /questions.json
   def create
     @question = Question.new(question_params)
     @question.user_id = current_user.id
@@ -41,8 +40,6 @@ class QuestionsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /questions/1
-  # PATCH/PUT /questions/1.json
   def update
     respond_to do |format|
       if @question.update(question_params)
@@ -55,8 +52,6 @@ class QuestionsController < ApplicationController
     end
   end
 
-  # DELETE /questions/1
-  # DELETE /questions/1.json
   def destroy
     @question.destroy
     respond_to do |format|
@@ -66,12 +61,10 @@ class QuestionsController < ApplicationController
   end
 
   private
-  # Use callbacks to share common setup or constraints between actions.
   def set_question
     @question = current_user.questions.find(params[:id])
   end
 
-  # Only allow a list of trusted parameters through.
   def question_params
     params.require(:question).permit(:title, :content, :difficulty)
   end

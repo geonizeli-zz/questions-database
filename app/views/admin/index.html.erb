@@ -46,7 +46,7 @@
   	<h3><%= I18n.t('page.admin.index.chart.user') %></h3>
   </div>
 
-	<canvas id="userQuestionsChart" width="400" height="100"></canvas>
+	<canvas id="userQuestionsChart" width="400" height=<%= 25 * @user_name.size %>></canvas>
 
 	<script>
 		function random_rgb() {

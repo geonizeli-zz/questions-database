@@ -4,11 +4,9 @@
 
 <div class='header'>
   <h3><%= I18n.t 'page.questions.show.header' %></h3>
-
-  <a class="btn-floating btn-large waves-effect waves-light"
-      href= <%= questions_path %> >
-      <i class="material-icons">arrow_back</i>
-  </a>
+  <%= link_to :back, class: 'btn-floating btn-large waves-effect waves-light' do %>
+    <i class="material-icons">arrow_back</i>
+  <% end %>
 </div>
 
 <div class='box'>
