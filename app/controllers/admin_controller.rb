@@ -4,13 +4,7 @@ class AdminController < ApplicationController
 
   def index
     @difficulty_options = [1, 2, 3, 4, 5]
-    @difficulty_questions = [
-      Question.where(difficulty: 1).count,
-      Question.where(difficulty: 2).count,
-      Question.where(difficulty: 3).count,
-      Question.where(difficulty: 4).count,
-      Question.where(difficulty: 5).count
-    ]
+    @difficulty_questions = Question.new.question_difficulty_count
     questions = Question.new.questions_count
     @user_name = questions[0]
     @user_questions = questions[1]

@@ -14,4 +14,14 @@ class Question < ApplicationRecord
     end
     [names, questions]
   end
+
+  def question_difficulty_count
+    [
+      Question.where(difficulty: 1).count,
+      Question.where(difficulty: 2).count,
+      Question.where(difficulty: 3).count,
+      Question.where(difficulty: 4).count,
+      Question.where(difficulty: 5).count
+    ]
+  end
 end
