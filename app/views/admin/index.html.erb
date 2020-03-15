@@ -38,3 +38,51 @@
 		});
 	</script>
 </div>
+
+
+
+<div class="user-questions-chart">
+	<div class='header'>
+  	<h3><%= I18n.t('page.admin.index.chart.user') %></h3>
+  </div>
+
+	<canvas id="userQuestionsChart" width="400" height="100"></canvas>
+
+	<script>
+		function random_rgb() {
+  		const o = Math.round, r = Math.random, s = 255;
+  		return 'rgba(' + o(r()*s) + ',' + o(r()*s) + ',' + o(r()*s) + ',' + 0.7 + ')';
+		}
+		var ctx = document.getElementById('userQuestionsChart').getContext('2d');
+		var userQuestionsChart = new Chart(ctx, {
+			type: 'horizontalBar',
+			data: {
+				labels: <%= raw @user_name %>,
+				datasets: [{
+					label: '<%= I18n.t('page.admin.index.chart.label') %>',
+					data: <%= @user_questions %>,
+					backgroundColor: [
+						<% @user_questions.each do %>
+							random_rgb(),
+						<% end %>
+					],
+					borderColor: [
+						<% @user_questions.each do %>
+							random_rgb(),
+						<% end %>
+					],
+					borderWidth: 1
+				}]
+			},
+			options: {
+				scales: {
+					yAxes: [{
+						ticks: {
+							beginAtZero: true
+						}
+					}]
+				}
+			}
+		});
+	</script>
+</div>

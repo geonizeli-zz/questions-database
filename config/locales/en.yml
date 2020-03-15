@@ -56,6 +56,7 @@ en:
         chart:
           difficulty: Questions Difficulty
           label: Questions
+          user: Users
         access:
           header: Access
           have_not: No other accesses defined.

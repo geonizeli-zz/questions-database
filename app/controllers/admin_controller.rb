@@ -11,6 +11,9 @@ class AdminController < ApplicationController
       Question.where(difficulty: 4).count,
       Question.where(difficulty: 5).count
     ]
+    questions = Question.new.questions_count
+    @user_name = questions[0]
+    @user_questions = questions[1]
   end
 
   def access

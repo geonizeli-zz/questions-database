@@ -57,6 +57,7 @@ pt-BR:
         chart:
           difficulty: Dificuldade das Questões
           label: Questões
+          user: Usuários
         access:
           header: Acessos
           have_not: Nenhum acesso foi definido ainda.
