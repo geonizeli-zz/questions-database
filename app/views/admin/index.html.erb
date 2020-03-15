@@ -86,3 +86,49 @@
 		});
 	</script>
 </div>
+
+<div class="subject-questions-chart">
+	<div class='header'>
+  	<h3><%= I18n.t('page.admin.index.chart.subjects') %></h3>
+  </div>
+
+	<canvas id="subjectQuestionsChart" width="400" height=<%= 25 * @subject_name.size %>></canvas>
+
+	<script>
+		function random_rgb() {
+  		const o = Math.round, r = Math.random, s = 255;
+  		return 'rgba(' + o(r()*s) + ',' + o(r()*s) + ',' + o(r()*s) + ',' + 0.7 + ')';
+		}
+		var ctx = document.getElementById('subjectQuestionsChart').getContext('2d');
+		var subjectQuestionsChart = new Chart(ctx, {
+			type: 'horizontalBar',
+			data: {
+				labels: <%= raw @subject_name %>,
+				datasets: [{
+					label: '<%= I18n.t('page.admin.index.chart.label') %>',
+					data: <%= @subject_questions %>,
+					backgroundColor: [
+						<% @subject_questions.each do %>
+							random_rgb(),
+						<% end %>
+					],
+					borderColor: [
+						<% @subject_questions.each do %>
+							random_rgb(),
+						<% end %>
+					],
+					borderWidth: 1
+				}]
+			},
+			options: {
+				scales: {
+					yAxes: [{
+						ticks: {
+							beginAtZero: true
+						}
+					}]
+				}
+			}
+		});
+	</script>
+</div>

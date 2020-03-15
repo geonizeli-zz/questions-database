@@ -10,6 +10,9 @@ class AdminController < ApplicationController
     questions = Question.new.questions_count
     @user_name = questions[0]
     @user_questions = questions[1]
+    subjects = Subject.new.questions_count
+    @subject_name = subjects[0]
+    @subject_questions = subjects[1]
   end
 
   def access
