@@ -3,7 +3,21 @@ class AdminController < ApplicationController
   before_action :admin?
 
   def index
+    @difficulty_options = [1, 2, 3, 4, 5]
+    @difficulty_questions = [
+      Question.where(difficulty: 1).count,
+      Question.where(difficulty: 2).count,
+      Question.where(difficulty: 3).count,
+      Question.where(difficulty: 4).count,
+      Question.where(difficulty: 5).count
+    ]
+  end
+
+  def access
     @users = User.all
+  end
+
+  def courses
     @courses = Course.all
   end
 

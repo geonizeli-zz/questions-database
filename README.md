@@ -13,6 +13,7 @@
 - [Material Icons](https://github.com/Angelmmiguel/material_icons)
 - [Animate.css](https://daneden.github.io/animate.css/)
 - [Cloudinary Widget](https://cloudinary.com/documentation/upload_widget)
+- [D3](https://github.com/d3/d3)
 
 ## Setup
 

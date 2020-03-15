@@ -1,0 +1,34 @@
+<div>
+  <div class='header'>
+    <h3><%= I18n.t('page.admin.index.access.header') %></h3>
+    <a class='btn-floating btn-large waves-effect waves-light'
+       href= <%= new_user_registration_path %>>
+      <i class='material-icons'>add</i>
+    </a>
+  </div>
+
+  <% unless @users.count == 1 %>
+    <table>
+      <thead>
+        <th><%= I18n.t('page.admin.index.access.table.access') %></th>
+        <th><%= I18n.t('page.admin.index.access.table.email') %></th>
+        <th><%= I18n.t('page.admin.index.access.table.questions') %></th>
+        <th><th>
+      </thdead>
+      <tbody>
+        <% @users.each do |user| %>
+          <% unless user == current_user %>
+            <tr>
+              <td><%= user.name %></td>
+              <td><%= user.email %></td>
+              <td><%= user.questions.count %></td>
+              <td><%= link_to 'delete', admin_path(user.id), method: :delete, data: { confirm: 'Are you sure?' }, class: 'material-icons' %></td>
+            </tr>
+          <% end %>
+        <% end %>
+      </tbody>
+    </table>
+  <% else %>
+  <p><%= I18n.t('page.admin.index.access.have_not') %></p>
+  <% end %>
+</div>

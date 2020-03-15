@@ -1,6 +1,8 @@
 en:
   nav:
-    overview: Overview
+    overview: Reports
+    access: Access
+    courses: Courses
     questions: Questions
     profile: Profile
     exit: Exit
@@ -51,6 +53,9 @@ en:
           title: Títle
     admin:
       index:
+        chart:
+          difficulty: Questions Difficulty
+          label: Questions
         access:
           header: Access
           have_not: No other accesses defined.

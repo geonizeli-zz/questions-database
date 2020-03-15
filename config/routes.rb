@@ -18,4 +18,7 @@ Rails.application.routes.draw do
   resources :questions
 
   resources :admin, only: [:index, :destroy]
+
+  get '/admin/courses', to: 'admin#courses'
+  get '/admin/access', to: 'admin#access'
 end

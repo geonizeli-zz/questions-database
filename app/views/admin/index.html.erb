@@ -2,70 +2,39 @@
   <p class="alert animated zoomIn faster" id="notice"><%= notice %></p>
 <% end %>
 
-<div>
-  <div class='header'>
-    <h3><%= I18n.t('page.admin.index.access.header') %></h3>
-    <a class='btn-floating btn-large waves-effect waves-light'
-       href= <%= new_user_registration_path %>>
-      <i class='material-icons'>add</i>
-    </a>
+<div class="difficulty-chart">
+	<div class='header'>
+  	<h3><%= I18n.t('page.admin.index.chart.difficulty') %></h3>
   </div>
 
-  <% unless @users.count == 1 %>
-    <table>
-      <thead>
-        <th><%= I18n.t('page.admin.index.access.table.access') %></th>
-        <th><%= I18n.t('page.admin.index.access.table.email') %></th>
-        <th><%= I18n.t('page.admin.index.access.table.questions') %></th>
-        <th><th>
-      </thdead>
-      <tbody>
-        <% @users.each do |user| %>
-          <% unless user == current_user %>
-            <tr>
-              <td><%= user.name %></td>
-              <td><%= user.email %></td>
-              <td><%= user.questions.count %></td>
-              <td><%= link_to 'delete', admin_path(user.id), method: :delete, data: { confirm: 'Are you sure?' }, class: 'material-icons' %></td>
-            </tr>
-          <% end %>
-        <% end %>
-      </tbody>
-    </table>
-  <% else %>
-  <p><%= I18n.t('page.admin.index.access.have_not') %></p>
-  <% end %>
-</div>
+	<canvas id="questionDifficulty" width="400" height="100"></canvas>
 
-<div>
-  <div class='header'>
-  <h3><%= I18n.t('page.admin.index.courses.header') %></h3>
-    <a class='btn-floating btn-large waves-effect waves-light'
-       href= <%= new_course_path %>>
-      <i class='material-icons'>add</i>
-    </a>
-  </div>
-
-  <% unless @courses.empty? %>
-    <table>
-      <thead>
-        <th class='just_column_name'><%= I18n.t('page.admin.index.courses.table.name') %></th>
-        <th></th>
-        <th></th>
-        <th></th>
-      </thdead>
-      <tbody>
-        <% @courses.each do |course| %>
-        <tr>
-          <td><%= course.name %></td>
-          <td><%= link_to 'visibility', course, class: 'material-icons' %></td>
-          <td><%= link_to 'edit', edit_course_path(course), class: 'material-icons' %></td>
-          <td><%= link_to 'delete', course, method: :delete, data: { confirm: 'Are you sure?' }, class: 'material-icons' %></td>
-        </tr>
-        <% end %>
-      </tbody>
-    </table>
-  <% else %>
-    <p><%= I18n.t('page.admin.index.courses.have_not') %></p>
-  <% end %>
+	<script>
+		function random_rgb() {
+  		const o = Math.round, r = Math.random, s = 255;
+  		return 'rgba(' + o(r()*s) + ',' + o(r()*s) + ',' + o(r()*s) + ',' + 0.7 + ')';
+		}
+		var ctx = document.getElementById('questionDifficulty').getContext('2d');
+		var questionDifficulty = new Chart(ctx, {
+			type: 'doughnut',
+			data: {
+				labels: <%= @difficulty_options %>,
+				datasets: [{
+					label: '<%= I18n.t('page.admin.index.chart.label') %>',
+					data: <%= @difficulty_questions %>,
+					backgroundColor: [
+						<% @difficulty_options.each do %>
+							random_rgb(),
+						<% end %>
+					],
+					borderColor: [
+						<% @difficulty_options.each do %>
+							random_rgb(),
+						<% end %>
+					],
+					borderWidth: 1
+				}]
+			}
+		});
+	</script>
 </div>

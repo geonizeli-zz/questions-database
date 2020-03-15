@@ -1,6 +1,8 @@
 pt-BR:
   nav:
-    overview: Visão Geral
+    overview: Relatórios
+    access: Acessos
+    courses: Cursos
     questions: Questões
     profile: Perfil
     exit: Sair
@@ -52,6 +54,9 @@ pt-BR:
           title: Título
     admin:
       index:
+        chart:
+          difficulty: Dificuldade das Questões
+          label: Questões
         access:
           header: Acessos
           have_not: Nenhum acesso foi definido ainda.
