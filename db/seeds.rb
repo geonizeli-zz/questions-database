@@ -8,6 +8,18 @@ User.create!(email: 'example@admin.com',
              name: 'Admin',
              admin: true)
 
+User.create!(email: 'example1@user.com',
+             password: 'password',
+             password_confirmation: 'password',
+             name: 'User 1',
+             admin: true)
+
+User.create!(email: 'example2@user.com',
+             password: 'password',
+             password_confirmation: 'password',
+             name: 'User 2',
+             admin: true)
+
 puts 'Courses: Start'
 
 adm = Course.create(name: 'Administração')
