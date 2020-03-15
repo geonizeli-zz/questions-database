@@ -66,10 +66,14 @@ class QuestionsController < ApplicationController
   end
 
   def question_params
-    params.require(:question).permit(:title, :content, :difficulty)
+    params.require(:question).permit(:title, :content, :difficulty, subject_ids: [])
   end
 
   def set_difficultys_options
-    @difficulty_options = [['Level 1', '1'], ['Level 2', '2'], ['Level 3', '3'], ['Level 4', '4'], ['Level 5', '5']]
+    @difficulty_options = [['Level 1', '1'],
+                           ['Level 2', '2'],
+                           ['Level 3', '3'],
+                           ['Level 4', '4'],
+                           ['Level 5', '5']]
   end
 end
