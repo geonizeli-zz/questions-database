@@ -4,25 +4,18 @@ class QuestionsController < ApplicationController
   before_action :set_question, only: [:show, :edit, :update, :destroy]
   before_action :set_difficultys_options, only: [:new, :edit, :update, :create]
 
-  add_breadcrumb I18n.t('breadcrumbs.questions'), :questions_path
-
   def index
     @questions = current_user.questions
   end
 
   def show
-    add_breadcrumb @question.title, :question_path
   end
 
   def new
-    add_breadcrumb I18n.t('breadcrumbs.new'), :new_question_path
-
     @question = Question.new
   end
 
   def edit
-    add_breadcrumb @question.title, :question_path
-    add_breadcrumb I18n.t('breadcrumbs.edit'), :edit_question_path
   end
 
   def create

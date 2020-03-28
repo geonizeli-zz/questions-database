@@ -17,7 +17,6 @@ gem 'devise-i18n'
 gem 'materialize-sass', '~> 1.0.0'
 gem 'material_icons'
 gem 'simple_form'
-gem 'breadcrumbs_on_rails'
 
 gem 'mini_magick'
 gem 'cloudinary'
