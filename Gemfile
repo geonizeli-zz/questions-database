@@ -14,6 +14,7 @@ gem 'jbuilder', '~> 2.7'
 gem 'devise', '~> 4.7', '>= 4.7.1'
 gem 'devise-i18n'
 
+gem 'bootstrap', '~> 4.4.1'
 gem 'material_icons'
 gem 'simple_form'
 

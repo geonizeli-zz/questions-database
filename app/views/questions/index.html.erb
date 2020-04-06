@@ -1,32 +1,36 @@
 <% if notice %>
-  <p class="alert animated zoomIn faster" id="notice"><%= notice %></p>
+  <p class="alert alert-primary animated zoomIn faster" id="notice"><%= notice %></p>
 <% end %>
 
-<div class='header'>
+<div class="header">
   <h3><%= I18n.t 'page.questions.index.header' %></h3>
-  <a class='btn-floating btn-large waves-effect waves-light'
+  <a class='btn btn-primary'
      href= <%= new_question_path %>>
-    <i class='material-icons'>add</i>
+    Criar Questão
   </a>
 </div>
 
 <% unless @questions.empty? %>
-  <ul class="cards">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">First</th>
+        <th scope="col"></th>
+        <th scope="col"></th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
       <% @questions.each do |question| %>
-        <li data-href= <%= question.id %> >
-          <div class="btn-group">
-            <%= link_to 'visibility', question, class: 'material-icons' %>
-            <%= link_to 'edit', edit_question_path(question), class: 'material-icons' %>
-            <%= link_to 'delete', question, method: :delete, data: { confirm: 'Are you sure?' }, class: 'material-icons' %>
-          <div>
-
-          <span><%= question.title %></span>
-            <% question.subjects.each do |subject| %>
-                <%= subject.name %>
-            <% end %>
-        </li>
+        <tr>
+          <td><%= question.title %></td>
+          <td class="text-center"><%= link_to 'visibility', question, class: 'material-icons' %></td>
+          <td class="text-center"><%= link_to 'edit', edit_question_path(question), class: 'material-icons' %></td>
+          <td class="text-center"><%= link_to 'delete', question, method: :delete, data: { confirm: 'Are you sure?' }, class: 'material-icons' %></td>
+        </tr>
       <% end %>
-  </ul>
+    </tbody>
+  </table>
 <% else %>
   <p><%= I18n.t 'page.questions.index.have_not' %><p>
 <% end %>

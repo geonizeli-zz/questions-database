@@ -2,27 +2,27 @@
 <div>
   <div class='header'>
     <h3><%= I18n.t('page.admin.index.courses.header') %></h3>
-    <a class='btn-floating btn-large waves-effect waves-light'
+    <a class='btn btn-primary'
        href= <%= new_course_path %>>
-      <i class='material-icons'>add</i>
+      Adicionar Curso
     </a>
   </div>
 
   <% unless @courses.empty? %>
-    <table>
+    <table class="table">
       <thead>
         <th class='just_column_name'><%= I18n.t('page.admin.index.courses.table.name') %></th>
         <th></th>
         <th></th>
         <th></th>
-      </thdead>
+      </thead>
       <tbody>
         <% @courses.each do |course| %>
         <tr>
           <td><%= course.name %></td>
-          <td><%= link_to 'visibility', course, class: 'material-icons' %></td>
-          <td><%= link_to 'edit', edit_course_path(course), class: 'material-icons' %></td>
-          <td><%= link_to 'delete', course, method: :delete, data: { confirm: 'Are you sure?' }, class: 'material-icons' %></td>
+          <td class="text-center"><%= link_to 'visibility', course, class: 'material-icons' %></td>
+          <td class="text-center"><%= link_to 'edit', edit_course_path(course), class: 'material-icons' %></td>
+          <td class="text-center"><%= link_to 'delete', course, method: :delete, data: { confirm: 'Are you sure?' }, class: 'material-icons' %></td>
         </tr>
         <% end %>
       </tbody>

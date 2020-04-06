@@ -1,28 +1,69 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Unifeso</title>
+    <title>Question Database</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     <%= javascript_include_tag '//widget.cloudinary.com/v2.0/global/all.js', defer: true %>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
   </head>
 
   <body>
 
-  <script
-    src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js">
-  </script>
 
-  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+    <% if @navbar %>
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="/">Question Database</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-  <%= render 'menu' %>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <% if current_user.admin %>
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item active">
+                <%= link_to questions_path, class: 'nav-link' do %>
+                  <%= I18n.t('nav.questions') %> <span class="sr-only">(current)<span>
+                <% end %>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <%= I18n.t('nav.overview') %>
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <%= link_to I18n.t('nav.profile'), admin_index_path, class: 'dropdown-item' %>
+                  <%= link_to I18n.t('nav.courses'), admin_courses_path, class: 'dropdown-item' %>
+                  <div class="dropdown-divider"></div>
+                  <%= link_to I18n.t('nav.access'), admin_access_path, class: 'dropdown-item' %>
+                </div>
+              </li>
+            </ul>
+          <% end %>
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <%= current_user.name %>
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <%= link_to I18n.t('nav.profile'), edit_user_registration_path, class: 'dropdown-item' %>
+                <div class="dropdown-divider"></div>
+                <%= link_to I18n.t('nav.exit'), destroy_user_session_path, method: :delete, class: 'dropdown-item' %>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    <% end %>
 
-  <div class='container'>
-    <%= yield %>
-  </div>
+
+    <div class='container'>
+      <%= yield %>
+    </div>
 
   </body>
 </html>

@@ -5,7 +5,7 @@ require("channels")
 require("trix")
 require("@rails/actiontext")
 
-let getCloudinaryConfig = function() {
+const getCloudinaryConfig = function() {
   return {
     cloudName: 'dajfqc1om',
     uploadPreset: 'unifeso',
@@ -148,12 +148,11 @@ let getCloudinaryConfig = function() {
   }
 };
 
-
 function pollDOM () {
   const el = document.getElementById('cloudinary-btn');
 
   if (el != null) {
-    document.getElementById("cloudinary-btn").addEventListener("click",
+    el.addEventListener('click',
       function eventHandler(event) {
         cloudinary.openUploadWidget({
           ...getCloudinaryConfig(),
@@ -172,7 +171,7 @@ function pollDOM () {
       }
     )
   } else {
-    setTimeout(pollDOM, 300);
+    setTimeout(pollDOM, 300)
   }
 }
 

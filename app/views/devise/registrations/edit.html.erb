@@ -1,8 +1,8 @@
 <div class='header'>
   <h3><%= t(".title", resource: resource.model_name.human) %></h3>
 
-  <%= link_to :back, class:'btn-floating btn-large waves-effect waves-light' do %>
-    <i class='material-icons'>arrow_back</i>
+  <%= link_to :back, class:'btn btn-secondary' do %>
+    Voltar
   <% end %>
 </div>
 
@@ -48,6 +48,6 @@
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit, t(".update") %>
+    <%= f.button :submit, t(".update"), class: 'btn btn-primary' %>
   </div>
 <% end %>

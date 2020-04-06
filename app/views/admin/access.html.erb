@@ -1,20 +1,20 @@
 <div>
   <div class='header'>
     <h3><%= I18n.t('page.admin.index.access.header') %></h3>
-    <a class='btn-floating btn-large waves-effect waves-light'
+    <a class='btn btn-primary'
        href= <%= new_user_registration_path %>>
-      <i class='material-icons'>add</i>
+      Criar Acesso
     </a>
   </div>
 
   <% unless @users.count == 1 %>
-    <table>
+    <table class="table">
       <thead>
         <th><%= I18n.t('page.admin.index.access.table.access') %></th>
         <th><%= I18n.t('page.admin.index.access.table.email') %></th>
         <th><%= I18n.t('page.admin.index.access.table.questions') %></th>
-        <th><th>
-      </thdead>
+        <th></th>
+      </thead>
       <tbody>
         <% @users.each do |user| %>
           <% unless user == current_user %>
@@ -22,7 +22,7 @@
               <td><%= user.name %></td>
               <td><%= user.email %></td>
               <td><%= user.questions.count %></td>
-              <td><%= link_to 'delete', admin_path(user.id), method: :delete, data: { confirm: 'Are you sure?' }, class: 'material-icons' %></td>
+              <td class="text-center"><%= link_to 'delete', admin_path(user.id), method: :delete, data: { confirm: 'Are you sure?' }, class: 'material-icons' %></td>
             </tr>
           <% end %>
         <% end %>
