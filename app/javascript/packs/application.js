@@ -148,31 +148,25 @@ const getCloudinaryConfig = function() {
   }
 };
 
-function pollDOM () {
-  const el = document.getElementById('cloudinary-btn');
+$(document).on('click', '#cloudinary-btn', function eventHandler(e) {
+  e.stopPropagation()
 
-  if (el != null) {
-    el.addEventListener('click',
-      function eventHandler(event) {
-        cloudinary.openUploadWidget({
-          ...getCloudinaryConfig(),
-          ...{showSkipCropButton: true},
-          ...{croppingAspectRatio: 1},
-        },
-        (err, result) => {
-          if (!err) {
-            if (result.event === 'success') {
-              document.getElementById('cloudinary-uploader-img').src = result.info.url
-              document.getElementById('cloudinary-uploader-field').value = result.info.public_id
-            }
-          }
-        }
-        )
+  cloudinary.openUploadWidget({
+    ...getCloudinaryConfig(),
+    ...{showSkipCropButton: true},
+    ...{croppingAspectRatio: 1},
+  },
+  (err, result) => {
+    if (!err) {
+      if (result.event === 'success') {
+        document.getElementById('cloudinary-uploader-img').src = result.info.url
+        document.getElementById('cloudinary-uploader-field').value = result.info.public_id
       }
-    )
-  } else {
-    setTimeout(pollDOM, 300)
+    }
   }
-}
+)})
 
-pollDOM();
+$(document).on('click', '.tr-link', function(e) {
+  e.stopPropagation()
+  window.open($(this).attr('data'), '_self')
+})

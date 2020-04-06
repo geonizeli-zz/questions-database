@@ -17,14 +17,12 @@
         <th scope="col">Título</th>
         <th scope="col"></th>
         <th scope="col"></th>
-        <th scope="col"></th>
       </tr>
     </thead>
     <tbody>
       <% @questions.each do |question| %>
-        <tr>
+        <tr class="tr-link" data="<%= question_path(question) %>">
           <td><%= question.title %></td>
-          <td class="text-center"><%= link_to 'visibility', question, class: 'material-icons' %></td>
           <td class="text-center"><%= link_to 'edit', edit_question_path(question), class: 'material-icons' %></td>
           <td class="text-center"><%= link_to 'delete', question, method: :delete, data: { confirm: 'Are you sure?' }, class: 'material-icons' %></td>
         </tr>

@@ -14,13 +14,11 @@
         <th class='just_column_name'><%= I18n.t('page.admin.index.courses.table.name') %></th>
         <th></th>
         <th></th>
-        <th></th>
       </thead>
       <tbody>
         <% @courses.each do |course| %>
-        <tr>
+        <tr class="tr-link" data="<%= course_path(course) %>">
           <td><%= course.name %></td>
-          <td class="text-center"><%= link_to 'visibility', course, class: 'material-icons' %></td>
           <td class="text-center"><%= link_to 'edit', edit_course_path(course), class: 'material-icons' %></td>
           <td class="text-center"><%= link_to 'delete', course, method: :delete, data: { confirm: 'Are you sure?' }, class: 'material-icons' %></td>
         </tr>
