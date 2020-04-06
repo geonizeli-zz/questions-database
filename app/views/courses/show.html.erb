@@ -3,7 +3,7 @@
 <% end %>
 
 <div class='header'>
-  <h1>Course</h1>
+  <h3>Course</h3>
   <%= link_to :back, class: 'btn btn-secondary' do %>
     Voltar
   <% end %>
@@ -12,13 +12,16 @@
 <div class='box'>
   <h3><%= @course.name %></h3>
   <% unless @course.subjects.empty? %>
-    <p>Has: <% @course.subjects.each do |subject| %>
-              <%= subject.name %>
-            <% end %>
+    <ul>
+      <% @course.subjects.each do |subject| %>
+        <li><%= subject.name %></li>
+      <% end %>
+    </ul>
+
   <% else %>
     <p>This course is not linked to any subjects.</p>
   <% end %>
   <div class='actions'>
-    <%= link_to I18n.t('action.edit'), edit_course_path(@course), class: 'btn right' %>
+    <%= link_to I18n.t('action.edit'), edit_course_path(@course), class: 'btn btn-secondary' %>
   </div>
 </div>
