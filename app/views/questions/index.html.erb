@@ -11,18 +11,22 @@
 </div>
 
 <% unless @questions.empty? %>
-  <table>
-    <tbody>
+  <ul class="cards">
       <% @questions.each do |question| %>
-        <tr class='highlight' data-href= <%= question %> >
-          <td class='just_column_name'><%= question.title %></td>
-          <td><%= link_to 'visibility', question, class: 'material-icons' %></td>
-          <td><%= link_to 'edit', edit_question_path(question), class: 'material-icons' %></td>
-          <td><%= link_to 'delete', question, method: :delete, data: { confirm: 'Are you sure?' }, class: 'material-icons' %></td>
-        </tr>
+        <li data-href= <%= question.id %> >
+          <div class="btn-group">
+            <%= link_to 'visibility', question, class: 'material-icons' %>
+            <%= link_to 'edit', edit_question_path(question), class: 'material-icons' %>
+            <%= link_to 'delete', question, method: :delete, data: { confirm: 'Are you sure?' }, class: 'material-icons' %>
+          <div>
+
+          <span><%= question.title %></span>
+            <% question.subjects.each do |subject| %>
+                <%= subject.name %>
+            <% end %>
+        </li>
       <% end %>
-    </tbody>
-  </table>
+  </ul>
 <% else %>
   <p><%= I18n.t 'page.questions.index.have_not' %><p>
 <% end %>

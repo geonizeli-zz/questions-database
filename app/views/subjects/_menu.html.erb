@@ -1,8 +1,7 @@
 <nav class="admin">
-  <div class="nav-wrapper">
-    <a href="#!" class="brand-logo left">Questions Database</a>
+    <a href="#!" class="brand-logo">Questions Database</a>
 
-    <ul class="right">
+    <ul>
       <li><%= link_to I18n.t('nav.questions'), questions_path %></li>
       <li><%= link_to I18n.t('nav.overview'), admin_index_path %></li>
       <li><%= link_to I18n.t('nav.access'), admin_access_path %></li>
@@ -10,5 +9,4 @@
       <li><%= link_to I18n.t('nav.profile'), edit_user_registration_path %></li>
       <li><%= link_to I18n.t('nav.exit'), destroy_user_session_path, method: :delete %></li>
     </ul>
-  </div>
 </nav>
