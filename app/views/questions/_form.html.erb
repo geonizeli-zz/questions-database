@@ -11,29 +11,28 @@
     </div>
   <% end %>
 
-  <div class='field'>
-    <%= f.text_field :title, placeholder: 'Title' %>
+  <div class="form-group">
+    <%= f.text_field :title, placeholder: 'Title', class: 'form-control' %>
   </div>
 
-  <div class='field'>
-    <%= f.rich_text_area :content %>
+  <div class="form-group">
+    <%= f.rich_text_area :content, class: 'form-control' %>
   </div>
 
-  <div class='field'>
+  <div class="form-group">
     <%= f.select(:difficulty, @difficulty_options,
                     { include_blank: false },
-                    class:'browser-default') %>
+                    class:'form-control') %>
   </div>
 
-  <div class="field field-association">
+  <div class="form-check">
     <%= f.association :subjects, as: :check_boxes, label: false %>
   </div>
 
 
   <div class='actions'>
-    <button class='btn waves-effect waves-light right' type='submit' name='action'>
+    <button class='btn btn-primary' type='submit' name='action'>
       <%= I18n.t 'action.save' %>
-      <i class='material-icons right'>save</i>
     </button>
   </div>
 <% end %>
