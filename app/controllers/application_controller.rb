@@ -1,11 +1,11 @@
 class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
-  before_action :enable_navbar, unless: :devise_controller?
+  before_action :devise?, if: :devise_controller?
 
   protected
 
-  def enable_navbar
-    @navbar = true
+  def devise?
+    @devise = true
   end
 
   def configure_permitted_parameters
